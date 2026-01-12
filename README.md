@@ -1,6 +1,6 @@
 ## deslopify
 
-Deslopify is a Codex skill that rewrites AI-sounding prose into more human copy while preserving the original Markdown structure.
+Deslopify is an agent-neutral skill (Agent Skills format) that rewrites AI-sounding prose into more human copy while preserving the original Markdown structure. It is compatible with any agent or tool that supports `SKILL.md` skills (e.g., Codex, Copilot, Claude).
 
 ### Use cases
 - Clean up AI-written articles or blog posts.
@@ -9,7 +9,7 @@ Deslopify is a Codex skill that rewrites AI-sounding prose into more human copy 
 
 ### Example
 
-Input (`@article.md`):
+Input (`article.md`):
 ```markdown
 # Product Clarity
 
@@ -30,7 +30,7 @@ Building great products is hard. Most teams feel it early.
 
 ### Invoke the skill
 - Prompt examples:
-  - `deslopify @article.md`
+  - `deslopify article.md`
   - `deslopify this draft and keep headings as-is`
 
 ### Update the AI tells list
