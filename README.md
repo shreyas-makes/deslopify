@@ -28,6 +28,26 @@ Building great products is hard. Most teams feel it early.
 - Rewrites sentence-by-sentence to remove AI tells and formulaic patterns.
 - Preserves meaning, structure, and formatting.
 
+### Install the skill
+
+#### Codex
+1. Copy the skill folder into your Codex skills directory:
+   ```bash
+   mkdir -p ~/.codex/skills
+   cp -R skills/deslopify ~/.codex/skills/deslopify
+   ```
+2. Restart Codex so it picks up the new skill.
+
+#### Claude
+1. Copy the skill folder into the skills directory that Claude is configured to read.
+2. If your Claude setup supports `.skill` bundles, you can copy `deslopify.skill` into that same directory instead.
+3. Restart Claude to load the skill.
+
+#### GitHub Copilot
+1. Copy the skill folder into the skills directory that Copilot is configured to read.
+2. If your Copilot setup supports `.skill` bundles, you can copy `deslopify.skill` instead.
+3. Restart Copilot so it detects the new skill.
+
 ### Invoke the skill
 - Prompt examples:
   - `deslopify article.md`
