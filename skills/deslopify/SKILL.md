@@ -1,6 +1,6 @@
 ---
 name: deslopify
-description: Rewrite AI-sounding prose into more human, natural copy while preserving existing Markdown structure and formatting. Use when asked to "deslopify" or clean AI-written articles/blog posts (e.g., `deslopify @article.md`) and when removing AI tells, formulaic phrasing, or predictable rhetorical patterns based on the current Wikipedia "Signs of AI writing" list.
+description: Rewrite AI-sounding prose into more human, natural copy while preserving existing Markdown structure and formatting. Use when asked to "deslopify" or clean AI-written articles/blog posts and when removing AI tells, formulaic phrasing, or predictable rhetorical patterns based on the current Wikipedia "Signs of AI writing" list.
 ---
 
 # Deslopify
@@ -13,17 +13,17 @@ Rewrite prose to read human while keeping the original structure, headings, list
 
 ### 1. Refresh the AI-tells reference
 
-Run the fetch script to pull the latest Wikipedia list into `references/ai_tells.wikitext`:
+If local scripts can be run and network access is allowed, run the fetch script to pull the latest Wikipedia list into `references/ai_tells.wikitext`:
 
 ```bash
-python3 skills/deslopify/scripts/fetch_wikipedia_ai_tells.py
+python3 scripts/fetch_wikipedia_ai_tells.py
 ```
 
 If the user forbids network access, proceed with the last saved reference. If none exists, use the local fallback list in `references/ai_tells_fallback.txt` and mention it may be stale.
 
 ### 2. Load the article and preserve structure
 
-Open the referenced file (e.g., `@article.md`). Keep all Markdown structure and formatting:
+Open the referenced file (e.g., `article.md`). Keep all Markdown structure and formatting:
 
 - Headings, lists, tables, links, code blocks, and blockquotes stay in place.
 - Do not change the outline or reorder sections unless the user asks.
