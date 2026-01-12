@@ -31,6 +31,11 @@ def load_fallback() -> str:
         return handle.read().strip()
 
 
+def load_existing() -> str:
+    with open(OUTPUT_PATH, "r", encoding="utf-8") as handle:
+        return handle.read().strip()
+
+
 def main() -> int:
     used_fallback = False
     try:
@@ -38,18 +43,23 @@ def main() -> int:
     except Exception as exc:
         print(
             f"Warning: failed to fetch Wikipedia wikitext ({exc}); "
-            "using local fallback list.",
+            "using cached list if available.",
             file=sys.stderr,
         )
         try:
-            wikitext = load_fallback()
-            used_fallback = True
-        except OSError as fallback_exc:
-            print(
-                f"Error: failed to load fallback list: {fallback_exc}",
-                file=sys.stderr,
-            )
-            return 1
+            _ = load_existing()
+            print(f"Using cached list at {OUTPUT_PATH}.", file=sys.stderr)
+            return 0
+        except OSError:
+            try:
+                wikitext = load_fallback()
+                used_fallback = True
+            except OSError as fallback_exc:
+                print(
+                    f"Error: failed to load fallback list: {fallback_exc}",
+                    file=sys.stderr,
+                )
+                return 1
 
     timestamp = datetime.now(timezone.utc).isoformat()
     output = (

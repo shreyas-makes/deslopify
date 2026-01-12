@@ -1,5 +1,5 @@
 Source: https://en.wikipedia.org/w/api.php?action=parse&page=Wikipedia:Signs_of_AI_writing&prop=wikitext&format=json
-Retrieved: 2026-01-12T20:23:13.240074+00:00
+Retrieved: 2026-01-12T21:00:40.660207+00:00
 
 {{WikiProject advice|wikiproject=WikiProject AI Cleanup|WP:AISIGNS|WP:AITELLS|WP:LLMSIGNS}}
 

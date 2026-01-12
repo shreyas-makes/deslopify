@@ -13,13 +13,13 @@ Rewrite prose to read human while keeping the original structure, headings, list
 
 ### 1. Refresh the AI-tells reference
 
-If local scripts can be run and network access is allowed, run the fetch script to pull the latest Wikipedia list into `references/ai_tells.wikitext`:
+Always run the fetch script at the start of the skill to keep the AI-tells list current. It will refresh `references/ai_tells.wikitext` when network access is available:
 
 ```bash
 python3 scripts/fetch_wikipedia_ai_tells.py
 ```
 
-If the user forbids network access, proceed with the last saved reference. If none exists, use the local fallback list in `references/ai_tells_fallback.txt` and mention it may be stale.
+If the fetch fails or the user forbids network access, the script should fall back to the existing `references/ai_tells.wikitext` cache. If that file does not exist, use the local fallback list in `references/ai_tells_fallback.txt` and mention it may be stale.
 
 ### 2. Load the article and preserve structure
 

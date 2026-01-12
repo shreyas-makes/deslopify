@@ -57,3 +57,4 @@ Building great products is hard. Most teams feel it early.
 ```bash
 python3 skills/deslopify/scripts/fetch_wikipedia_ai_tells.py
 ```
+If the fetch fails (offline or blocked), it falls back to the cached `skills/deslopify/references/ai_tells.wikitext`. If the cache is missing, it uses `skills/deslopify/references/ai_tells_fallback.txt`.
