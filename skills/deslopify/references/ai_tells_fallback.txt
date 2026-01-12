@@ -1,0 +1,24 @@
+Fallback list of AI-writing tells (use when offline or fetch fails).
+
+Phrases to avoid:
+- "Here's the thing"
+- "Let that sink in"
+- "The uncomfortable truth is"
+- "This matters because"
+- "So what's the answer?"
+- "Let me be clear"
+- "I'm going to be honest"
+- "The real unlock is"
+- "Full stop"
+
+Structures to avoid:
+- "Not because X. Because Y."
+- "[Noun]. That's it. That's the [thing]."
+- "And that's okay."
+- Repeated dramatic fragment sentences
+- Question followed by immediate answer
+
+Habits to avoid:
+- Tripling lists by default (three examples every time)
+- Starting paragraphs with "So" or "Look"
+- Ending every section with a punchy one-liner
