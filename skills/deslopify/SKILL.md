@@ -7,7 +7,7 @@ description: Rewrite AI-sounding prose into more human, natural copy while prese
 
 ## Overview
 
-Rewrite prose to read human while keeping the original structure, headings, lists, and formatting intact. Use the current Wikipedia list of AI tells as a dynamic constraint to avoid.
+Rewrite prose to read human while keeping the original structure, headings, lists, and formatting intact. Use the current Wikipedia list of AI tells as a dynamic constraint to avoid. Aim for more generative, creative phrasing (higher variation and lexical diversity) without changing facts or structure.
 
 ## Workflow
 
@@ -27,20 +27,30 @@ Open the referenced file (e.g., `article.md`). Keep all Markdown structure and f
 
 - Headings, lists, tables, links, code blocks, and blockquotes stay in place.
 - Do not change the outline or reorder sections unless the user asks.
+- Hard no-touch content: code blocks, quoted text, URLs, link text, numbers, citations/footnotes.
 
-### 3. Deslopify the copy
+### 3. Deslopify the copy (creative pass)
 
-Rewrite sentence-by-sentence and paragraph-by-paragraph, keeping meaning and intent but removing AI tells:
+Rewrite sentence-by-sentence and paragraph-by-paragraph, keeping meaning and intent but removing AI tells. Favor higher-entropy choices and fresh phrasing that still fits the source tone:
 
 - Cut throat-clearing openers, dramatic pivots, and filler.
 - Avoid formulaic contrasts (e.g., "Not X. But Y.") and cadence-heavy punchlines.
 - Vary sentence lengths; do not default to rhythmic triads.
 - Prefer direct statements over rhetorical questions and self-answering.
 - Keep tone consistent with the source; do not inject a new voice.
+- Reach for vivid but accurate verbs and concrete nouns when they clarify, not embellish.
+- Allow occasional mild metaphor or sensory phrasing if it feels native to the original.
+- Avoid safe paraphrase; choose distinctive alternatives that still read natural.
 
 ### 4. Validate against the Wikipedia tells
 
 Scan the output against the latest `references/ai_tells.wikitext` list and remove any matching patterns or stylistic cues. If a tell appears unavoidable, rewrite again until the tell is gone.
+
+Optional: run the linter to catch common AI-tell phrases in the output draft:
+
+```bash
+python3 scripts/lint_ai_tells.py <draft.md>
+```
 
 ### 5. Deliver clean output
 
@@ -52,3 +62,4 @@ Return the revised content only. Do not include a score or commentary unless the
 - Keep lists concise; two items often beat three.
 - Avoid meta phrases like "let that sink in" or "here's the thing."
 - End paragraphs in varied ways; avoid the final punchline cadence.
+- Use a slightly higher-variance word choice; avoid bland neutrality.
