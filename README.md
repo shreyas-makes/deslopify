@@ -10,25 +10,25 @@ Deslopify is an agent-neutral skill (Agent Skills format) that rewrites AI-sound
 ## Example
 
 Input (`article.md`):
-```markdown
+````markdown
 # Product Clarity
 
 Here's the thing: building great products is hard. Let that sink in. In today's fast-paced environment, teams often struggle to align, prioritize, and ship. This is especially true when vision is fuzzy and the roadmap keeps shifting.
 
 At the end of the day, you need to focus on what matters, and that's not always easy. It's important to recognize that progress isn't linear, and there will be bumps along the way.
-```
+````
 
 Output:
-```markdown
+````markdown
 # Product Clarity
 
 Building great products is hard. Most teams feel it early, especially when priorities keep moving.
 
 The work gets easier when the vision is sharp and tradeoffs are explicit. Progress is uneven, but clarity keeps teams shipping.
-```
+````
 
 Input (`guide.md`):
-```markdown
+````markdown
 ## The Launch Playbook
 
 In the world of product launches, there are a few key things you should keep in mind. First and foremost, communication is crucial. It is important to make sure everyone is on the same page, and that stakeholders are aligned. That being said, you also need to be flexible and adapt as needed.
@@ -39,10 +39,10 @@ In the world of product launches, there are a few key things you should keep in 
 - Leverage your resources to maximize impact.
 
 Ultimately, the goal is to deliver a successful launch that resonates with your audience and drives results.
-```
+````
 
 Output:
-```markdown
+````markdown
 ## The Launch Playbook
 
 Product launches hinge on clear communication. Stakeholders need to understand the goals, and teams need to know what changes as dates move.
@@ -53,10 +53,10 @@ Product launches hinge on clear communication. Stakeholders need to understand t
 - Use the resources you have, not the ones you wish you had.
 
 The goal is a launch that reaches the right audience and produces measurable results.
-```
+````
 
 Input (`notes.md`):
-```markdown
+````markdown
 ### Metrics Snapshot
 
 Last quarter we grew 18% QoQ and added 1,240 new accounts. Here's the thing: those numbers look great, but there is still work to be done.
@@ -71,10 +71,10 @@ Footnote stays: We expanded into 3 new regions.[^1]
 ```sh
 curl -X POST https://api.example.com/v1/launch
 ```
-```
+````
 
 Output:
-```markdown
+````markdown
 ### Metrics Snapshot
 
 Last quarter we grew 18% QoQ and added 1,240 new accounts. The numbers are strong, but the work is not finished.
@@ -89,7 +89,7 @@ Footnote stays: We expanded into 3 new regions.[^1]
 ```sh
 curl -X POST https://api.example.com/v1/launch
 ```
-```
+````
 
 ## How it deslopifies
 - Fetches the current Wikipedia ["Signs of AI writing"](https://en.wikipedia.org/wiki/Signs_of_AI_writing) list (with an offline fallback) and continuously checks against it.
