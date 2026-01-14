@@ -1,6 +1,6 @@
 # deslopify
 
-Deslopify is an agent-neutral skill (Agent Skills format) that rewrites AI-sounding prose into more human copy while preserving the original Markdown structure. It is compatible with any agent or tool that supports `SKILL.md` skills (e.g., Codex, Copilot, Claude).
+Deslopify is an agent-agnostic skill that rewrites AI-sounding prose into more human copy while preserving the original Markdown structure. It is compatible with any agent or tool that supports `SKILL.md` skills (e.g., Codex, Copilot, Claude).
 
 ## Use cases
 - Clean up AI-written articles or blog posts.
